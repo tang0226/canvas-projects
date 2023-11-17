@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#canvas {
+				border: 1px solid black;
+				position: absolute;
+				left: 0px;
+				top: 0px
+			}
+		</style>
+
+	</head>
+	<body>
+		<canvas id="canvas" tabindex="1"></canvas>
+		<script>
+			
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext("2d");
+			
+			window.onload = function() {
+				var script = document.createElement("script");
+				script.src = "./Stars.js";
+				document.body.appendChild(script);
+			};
+		</script>
+		<script src="../utils/Math.js"></script>
+		<script src="../utils/canvas.js"></script>
+	</body>
+</html>

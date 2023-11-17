@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#canvas {
+				border: 1px solid black;
+				margin: 10px
+			}
+		</style>
+
+	</head>
+	<body>
+		<canvas id="canvas" tabindex="1" width="600" height="600"></canvas>
+		<script>
+			
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext("2d");
+			
+			window.onload = function() {
+				var script = document.createElement("script");
+				script.src = "./Bouncing_Ball.js";
+				document.body.appendChild(script);
+			};
+		</script>
+		<script src="../utils/Math.js"></script>
+		<script src="../utils/canvas.js"></script>
+	</body>
+</html>

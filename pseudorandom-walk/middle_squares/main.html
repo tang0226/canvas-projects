@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#canvas {
+				border: 1px solid black;
+				margin-top: 10px;
+			}
+		</style>
+		<title>
+			Pseudorandom walk (Middle Squares Method)
+		</title>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script src="../../utils/Math.js"></script>
+		<script>
+			var c = document.getElementById("canvas").getContext("2d");
+			const WIDTH = document.getElementById("canvas").width;
+			const HEIGHT = document.getElementById("canvas").height;
+		</script>
+		<script src="./middle_squares_method.js"></script>
+	</body>
+</html>
