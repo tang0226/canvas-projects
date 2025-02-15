@@ -8,20 +8,21 @@ canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 
 
-const iterations = 10000;
+const iterations = 100;
 
 const endCutoffRate = 0;
 //const endCutoff = Math.round(iterations * endCutoffRate);
 const endCutoff = 0;
 
-const startCutoffRate = 0.1;
+const startCutoffRate = 0;
 const startCutoff = Math.round(iterations * startCutoffRate);
 
 
-const minIters = 500;
+const minIters = 100;
 const logBase = Math.E;
 const factor = 1;
 
+const interval = 10;
 
 var imWidth = 4 * canvasHeight / canvasWidth;
 var reHeight = 4;
@@ -91,7 +92,7 @@ renderWorker.postMessage({
     reHeight: reHeight,
     reCenter, reCenter,
     imCenter, imCenter,
-    interval: 1000
+    interval: interval,
 })
 
 /*

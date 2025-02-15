@@ -1,4 +1,4 @@
-setCanvasDim(1750, 1000);
+setCanvasDim(5000, 1000);
 background(0);
 strokeWeight(2);
 
@@ -15,7 +15,7 @@ fontSize(FONT_SIZE);
 
 var AVERAGE_TREE_MODE = false;
 
-var targetDepth = 25;
+var targetDepth = 30;
 var layerThickness = 30;
 var bottomBorder = targetDepth * layerThickness;
 

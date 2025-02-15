@@ -211,6 +211,10 @@ for(let i = 1; i < wordsData.length; i++) {
         let newWord = new Word(wordsData[i].word, wordsData[i].count);
         newWord.setDirection(Math.floor(Math.random() * 3) - 1);
         let adjWord = positionedWords[Math.floor(Math.random() * positionedWords.length)];
+        while(Math.abs(newWord.count - adjWord.count) == 0) {
+            console.log(Math.abs(newWord.count - adjWord.count));
+            adjWord = positionedWords[Math.floor(Math.random() * positionedWords.length)];
+        }
         //side = 1;
         let margin = newWord.size * marginRate;
         switch(side) {

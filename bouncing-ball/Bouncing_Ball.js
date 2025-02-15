@@ -1,21 +1,28 @@
-setCanvasDim(600, 600);
+setCanvasDim(3000, 2000);
+
+const FRAME_DELAY = 0;
 
 noStroke();
 
 colorMode("HEX");
 
-var BALL_COLOR = "#8888FF";
+var BALL_HUE = 0;
+var BALL_ALPHA = 0.02;
+var BALL_COLOR = `hsl(${BALL_HUE}, 100%, 50%, ${BALL_ALPHA})`;
+const COLOR_CHANGE_RATE = 0.025;
 var radius = 40;
 
 var BACKGROUND_COLOR = "#000000";
+background(BACKGROUND_COLOR);
 
-var velRange = 50;
+var velRange = 20;
 
 var CEILING = false;
 
-var gravity = 0.75;
-var elasticity = 0.85;
-var drag = 0.995;
+var gravity = 0.1;
+var elasticity = 1.005;
+elasticity = 1.003;
+var drag = 1;
 
 class Ball {
 	constructor(x, y, r, xVel, yVel) {
@@ -39,7 +46,7 @@ class Ball {
 		this.y += this.yVel;
 		
 		if(this.x < this.r) {
-			this.x = this.r;
+			this.x = this.r + this.x;
 			this.xVel *= -elasticity;
 		}
 		if(this.x > WIDTH - this.r) {
@@ -64,12 +71,20 @@ var ball = new Ball(
 	randBetween(radius, HEIGHT - radius),
 	radius,
 	randBetween(-velRange, velRange),
-	randBetween(-velRange, velRange)
+	0 //randBetween(-velRange, velRange)
 );
+
+var speed = 1000;
+
 var draw = function() {
-	background(BACKGROUND_COLOR);
-	ball.draw();
-	ball.update();
+	//background(BACKGROUND_COLOR);
+	for (let i = 0; i < speed; i++) {
+		BALL_HUE = (BALL_HUE + COLOR_CHANGE_RATE) % 360;
+		BALL_COLOR = `hsla(${BALL_HUE}, 100%, 50%, ${BALL_ALPHA})`;
+		ball.draw();
+		ball.update();
+	}
 	setTimeout(draw, FRAME_DELAY);
 };
+
 draw();

@@ -4,13 +4,15 @@
 		<style>
 			#canvas {
 				border: 1px solid black;
-				margin: 10px
+				position: absolute;
+				left: 10px;
+				top: 10px;
 			}
 		</style>
 
 	</head>
 	<body>
-		<canvas id="canvas" tabindex="1" width="600" height="600"></canvas>
+		<canvas id="canvas" tabindex="1" style="margin: 0px; position: absolute; left: 0px; top: 0px;"></canvas>
 		<script>
 			
 			var canvas = document.getElementById("canvas");
@@ -18,11 +20,11 @@
 			
 			window.onload = function() {
 				var script = document.createElement("script");
-				script.src = "./Bouncing_Ball.js";
+				script.src = "./collatz-chart.js";
 				document.body.appendChild(script);
 			};
 		</script>
-		<script src="../canvas/canvas.js"></script>
-		<script src="../math/math.js"></script>
+		<script src="../Math/Math.js"></script>
+		<script src="../Canvas/canvas.js"></script>
 	</body>
 </html>
